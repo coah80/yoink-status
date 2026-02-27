@@ -307,13 +307,13 @@ async function fetchJSON(path) {
 async function checkEndpoint(url) {
   const start = performance.now();
   try {
-    const res = await fetch(url, { mode: 'no-cors', cache: 'no-store' });
+    const res = await fetch(url, { cache: 'no-store' });
     const ms = Math.round(performance.now() - start);
-    // no-cors returns opaque response (status 0) but if it didn't throw, the server responded
-    return { up: true, ms };
+    return { up: res.ok, ms, code: res.status };
   } catch (e) {
+    // Network error or CORS block (Cloudflare 502 pages don't have CORS headers)
     const ms = Math.round(performance.now() - start);
-    return { up: false, ms };
+    return { up: false, ms, code: 0 };
   }
 }
 
