@@ -1,0 +1,47 @@
+owner: coah80
+repo: status
+user-agent: "coah80"
+
+sites:
+  - name: yoink.tools
+    url: https://yoink.tools
+    icon: https://yoink.tools/icons/icon-192.png
+  - name: yoink API
+    url: https://yoink.tools/health
+    expectedStatusCodes:
+      - 200
+  - name: yoink Discord Bot
+    url: https://yoink.tools/api/limits
+    expectedStatusCodes:
+      - 200
+
+status-website:
+  cname: status.yoink.tools
+  name: yoink status
+  theme: dark
+  logoUrl: https://yoink.tools/icons/icon-192.png
+  navbar:
+    - title: yoink.tools
+      href: https://yoink.tools
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "*/5 * * * *"
+  uptime: "*/5 * * * *"
+
+i18n:
+  activeIncidents: Active incidents
+  noActiveIncidents: All systems operational
+  pastIncidents: Past incidents
+  pastIncidentsResolved: Resolved
+  liveStatus: Live status
+  allSystemsOperational: All systems operational
+  notAllSystemsOperational: Not all systems operational
+  overallUptime: Overall uptime
+  responseTime: Response time (ms)
