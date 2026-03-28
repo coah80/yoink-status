@@ -1,7 +1,7 @@
 url: https://yoink.tools/api/limits
-status: down
-code: 502
-responseTime: 45
-lastUpdated: 2026-03-28T08:20:32.775Z
+status: up
+code: 200
+responseTime: 55
+lastUpdated: 2026-03-28T08:59:32.104Z
 startTime: 2026-02-27T19:00:32.993Z
 generator: Upptime <https://github.com/upptime/upptime>
